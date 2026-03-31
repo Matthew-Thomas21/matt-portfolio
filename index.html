@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matt Thomas | Junior Solutions Engineer</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --panel-2: #182246;
+      --text: #eef2ff;
+      --muted: #b7c0e0;
+      --line: #2b396f;
+      --accent: #7aa2ff;
+      --accent-2: #9ef0d0;
+      --shadow: 0 14px 40px rgba(0,0,0,.25);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #08101e 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a { color: var(--text); text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8, 16, 30, .88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: .95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 72px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(24,34,70,.92) 0%, rgba(18,25,51,.96) 100%);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: .92rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.6rem); }
+    h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
+    h3 { font-size: 1.1rem; }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--text);
+      opacity: .96;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.09);
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #5f8cf9 100%);
+      color: #08101e;
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .mini-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 18px 0 16px;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-size: .92rem;
+    }
+
+    .project-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .project-copy {
+      padding: 22px;
+    }
+
+    .project-shot {
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, rgba(122,162,255,.25), rgba(158,240,208,.18));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.72);
+      font-weight: 700;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+    }
+
+    .checklist {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .checklist li { margin-bottom: 8px; }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .footer {
+      padding: 28px 0 50px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2, .grid-3, .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Matt Thomas</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <section class="card">
+        <div class="eyebrow">Junior Solutions Engineer / Associate Solutions Consultant</div>
+        <h1>I build technical solutions and explain them in a way people can actually use.</h1>
+        <p class="lead">
+          I’m Matt Thomas, a Computer Science senior at Montana State graduating in May 2026. I’ve built business-facing software,
+          worked on real workflow problems during my internship, and I like being the person who can understand the technical side,
+          explain it clearly, and help turn a messy process into something people can actually use.
+        </p>
+        <p>
+          I’m targeting junior Solutions Engineer, Associate Solutions Consultant, Sales Engineer Associate, and other customer-facing technical roles where I can demo products, solve workflow problems, and work with customers and internal teams.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="resume.pdf" target="_blank">Open Resume</a>
+          <a class="btn secondary" href="#proof">See Demo + Proof</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/matt-thomas-7b9871342" target="_blank">LinkedIn</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>May 2026</strong>
+            <span>Graduating from Montana State University</span>
+          </div>
+          <div class="stat">
+            <strong>Real internship build</strong>
+            <span>Business-facing scheduling workflow software</span>
+          </div>
+          <div class="stat">
+            <strong>Customer-facing mindset</strong>
+            <span>Translate user pain into usable technical solutions</span>
+          </div>
+          <div class="stat">
+            <strong>Strong fit for</strong>
+            <span>Solutions, presales, implementation, technical consulting</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>What I bring</h2>
+        <ul class="mini-list">
+          <li>Computer Science senior with real software internship experience</li>
+          <li>Built workflow tools for business users in construction operations</li>
+          <li>Comfortable with C#, .NET, MVC, JavaScript, SQL, APIs, and UI workflows</li>
+          <li>Can explain technical systems simply to non-technical users</li>
+          <li>Interested in solutions engineering, demos, customer conversations, and technical problem solving</li>
+        </ul>
+
+        <h3 style="margin-top:22px;">Core tools + technologies</h3>
+        <div class="pill-row">
+          <span class="pill">C#</span>
+          <span class="pill">.NET</span>
+          <span class="pill">ASP.NET MVC</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">SQL</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">Bootstrap</span>
+          <span class="pill">jQuery</span>
+          <span class="pill">Kendo UI</span>
+          <span class="pill">Azure DevOps</span>
+          <span class="pill">GitHub</span>
+          <span class="pill">Visual Studio</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">About</div>
+          <h2>Why I’m going after solutions roles</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <p>
+              I like technical work, but what I really like is when the technical work solves an actual business problem and makes someone’s job easier.
+              The part I enjoy most is understanding the workflow, figuring out what is broken, and then helping turn that into something usable.
+            </p>
+            <p>
+              That is why I’m targeting solutions engineering and similar roles. I want to be in a role where I can work with customers,
+              explain products clearly, demo solutions, answer technical questions, and help bridge the gap between business needs and the product.
+            </p>
+          </div>
+          <div class="card">
+            <h3>What makes me different from a generic new grad</h3>
+            <ul class="checklist">
+              <li>I have already built software for real business workflows, not just class assignments.</li>
+              <li>I can talk about user pain, process improvement, and business impact, not just code.</li>
+              <li>I’m comfortable presenting technical ideas in a direct way that makes sense.</li>
+              <li>I’m open to solutions engineering, solution consulting, implementation, and other customer-facing technical roles.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Experience</div>
+          <h2>Real work I’ve already done</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item card">
+            <strong>Web Developer Intern | ECC | Summer 2025</strong>
+            <p>
+              Built a Scheduling Change Request web application for construction teams so field managers could submit proposed schedule updates for review and approval.
+              The tool helped centralize project activity updates, improve communication, and make the scheduling process easier to track.
+            </p>
+            <p>
+              Worked with C#, ASP.NET MVC, JavaScript, jQuery, Bootstrap, Kendo UI, SQL, RESTful APIs, Dapper, and Azure DevOps.
+              Built modal workflows, grid interactions, form handling, schedule editing flows, and notification logic to support actual business use.
+            </p>
+            <p>
+              This experience gave me a strong foundation in understanding user workflows, building practical tools, and translating business needs into a working technical solution.
+            </p>
+          </div>
+
+          <div class="timeline-item card">
+            <strong>Montana State University | Computer Science | Graduation: May 2026</strong>
+            <p>
+              Studying computer science with hands-on work across software development, web applications, databases, systems, and customer-facing project presentations.
+              I’ve also built and presented technical project proposals and worked through real development workflows with feedback from supervisors and teams.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Projects</div>
+          <h2>Projects that show how I think</h2>
+        </div>
+
+        <div class="grid-2">
+          <article class="card project-card">
+            <div class="project-shot">
+              Replace this area with a screenshot file like images/scr-app-home.png
+            </div>
+            <div class="project-copy">
+              <h3>Scheduling Change Request Application</h3>
+              <p>
+                Built during my internship to support construction scheduling workflows. The goal was to help field teams submit schedule changes, route those updates for review, and keep the process organized.
+              </p>
+              <p><strong>Business problem:</strong> schedule changes were hard to manage and needed a better workflow for review and communication.</p>
+              <p><strong>My role:</strong> helped build the web application flow, modal interactions, data handling, and user-facing features that made the process easier to use.</p>
+              <p><strong>Tech used:</strong> C#, ASP.NET MVC, JavaScript, jQuery, Bootstrap, Kendo UI, SQL, REST APIs, Dapper.</p>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-shot">
+              Replace this area with a screenshot file like images/nfl-project.png
+            </div>
+            <div class="project-copy">
+              <h3>NFL Stats and Drafting Tool</h3>
+              <p>
+                Built a full-stack tool focused on player search, filtering, projected points, comparison mode, and fantasy roster flow.
+                This project showed my ability to build an engaging user-facing product and present data in a way that is useful and easy to understand.
+              </p>
+              <p><strong>What it shows:</strong> product thinking, UI design, data handling, and building features around what the user actually wants to do.</p>
+              <p><strong>Tech used:</strong> Node.js, Express, JavaScript, local storage, API integration, frontend UI workflows.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Proof</div>
+          <h2>What employers should look at first</h2>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>2-minute solution demo</h3>
+            <p>
+              Add your Loom or YouTube unlisted link here. This should be the first thing you send to recruiters, managers, and people you message after applying.
+            </p>
+            <div class="cta-row">
+              <a class="btn primary" href="https://www.loom.com/" target="_blank">Add Demo Link Here</a>
+            </div>
+            <p style="margin-top:16px;"><strong>What to say in the video:</strong></p>
+            <ul class="checklist">
+              <li>What problem the app solves</li>
+              <li>Who the user is</li>
+              <li>How the workflow works</li>
+              <li>Why it matters to the business</li>
+              <li>One or two technical details said in a simple way</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>One-page solution brief</h3>
+            <p>
+              Put a PDF here named <strong>solution-brief.pdf</strong>. This can be a simple one-pager that explains the customer problem, workflow, and value.
+            </p>
+            <div class="cta-row">
+              <a class="btn secondary" href="solution-brief.pdf" target="_blank">Open Solution Brief</a>
+            </div>
+            <p style="margin-top:16px;"><strong>Suggested sections:</strong></p>
+            <ul class="checklist">
+              <li>Customer problem</li>
+              <li>Current pain point</li>
+              <li>How the solution works</li>
+              <li>Business impact</li>
+              <li>Technical overview</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Target roles</div>
+          <h2>Roles I’m actively pursuing</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Solutions Engineering</h3>
+            <p>Junior Solutions Engineer, Associate Solutions Engineer, Sales Engineer Associate, Presales roles.</p>
+          </div>
+          <div class="card">
+            <h3>Solution Consulting</h3>
+            <p>Associate Solution Consultant, Technical Consultant, Platform Consultant, product-facing consulting roles.</p>
+          </div>
+          <div class="card">
+            <h3>Adjacent entry points</h3>
+            <p>Implementation Consultant, Technical Account roles, Customer Success Engineer, Product Specialist, Technical Support Engineer in SaaS.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Contact</div>
+          <h2>How to reach me</h2>
+        </div>
+        <div class="card">
+          <p>
+            I’m actively looking for junior solutions, presales, solution consulting, and customer-facing technical roles for 2026. If you think I could be a fit for your team, feel free to reach out.
+          </p>
+          <div class="contact-box">
+            <a class="btn primary" href="mailto:mattyt098@gmail.com">Email Me</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/matt-thomas-7b9871342" target="_blank">LinkedIn</a>
+            <a class="btn secondary" href="https://github.com/" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Built to show real solutions engineering potential, not just a list of classes.
+    </div>
+  </footer>
+</body>
+</html>

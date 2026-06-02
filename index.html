@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matt Thomas | Junior Solutions Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Matthew Thomas | Forward Deployed Engineer</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121933;
-      --panel-2: #182246;
-      --text: #eef2ff;
-      --muted: #b7c0e0;
-      --line: #2b396f;
-      --accent: #7aa2ff;
-      --accent-2: #9ef0d0;
+      --bg: #f7f8fa;
+      --panel: #ffffff;
+      --panel-2: #f3f4f6;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --accent: #2563eb;
+      --accent-2: #475569;
       --shadow: 0 14px 40px rgba(0,0,0,.25);
       --max: 1120px;
     }
@@ -22,8 +25,8 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #08101e 0%, #0b1020 100%);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f8fa;
       color: var(--text);
       line-height: 1.55;
     }
@@ -40,7 +43,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(8, 16, 30, .88);
+      background: rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
@@ -61,7 +64,7 @@
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 14px;
       flex-wrap: wrap;
       font-size: .95rem;
       color: var(--muted);
@@ -71,29 +74,29 @@
     .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 72px 0 40px;
+      padding: 48px 0 24px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr .95fr;
+      grid-template-columns: 1fr;
       gap: 28px;
       align-items: stretch;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(24,34,70,.92) 0%, rgba(18,25,51,.96) 100%);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 14px;
       padding: 26px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
     }
 
     .eyebrow {
       color: var(--accent-2);
       font-weight: 700;
       font-size: .92rem;
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
       letter-spacing: .08em;
       margin-bottom: 8px;
     }
@@ -103,9 +106,9 @@
       line-height: 1.15;
     }
 
-    h1 { font-size: clamp(2rem, 5vw, 3.6rem); }
-    h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
-    h3 { font-size: 1.1rem; }
+    h1 { font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 600; }
+    h3 { font-size: 1.15rem; font-weight: 600; }
 
     p { margin: 0 0 14px; color: var(--muted); }
 
@@ -171,7 +174,7 @@
     }
 
     .section {
-      padding: 18px 0 16px;
+      padding: 32px 0;
     }
 
     .section-header {
@@ -287,12 +290,12 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">Matt Thomas</div>
+      <div class="brand">Matthew Thomas</div>
       <div class="nav-links">
-        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        
+        <a href="#education">Education</a>
+        <a href="#roles">Roles</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -301,90 +304,32 @@
   <header class="hero">
     <div class="container hero-grid">
       <section class="card">
-        <div class="eyebrow">Junior Solutions Engineer / Associate Solutions Consultant</div>
-        <h1>I build software that helps people solve real problems.</h1>
-        <p class="lead">
-          I’m Matt Thomas, a Computer Science graduate from Montana State University. During my internship at ECC, I worked on software used by construction teams to manage schedules, approvals, and project workflows. I enjoy building practical tools, working with users, and solving problems that have a real impact on how people do their jobs.
+        <div class="eyebrow">Computer Science Graduate</div>
+        <h1>Building software that solves practical business problems.</h1>
+        <p class="lead">Rocklin, California • B.S. Computer Science • Montana State University</p>
+        <p>
+                    I’m Matthew Thomas, a Computer Science graduate with experience building internal business applications, workflow tools, and customer-focused software solutions. During my internship at ECC, I worked directly with project managers, schedulers, and stakeholders to improve processes through software and deliver solutions that addressed real operational needs.
         </p>
         <p>
-          I’m interested in software engineering, Forward Deployed Engineering, solutions engineering, and implementation-focused roles where I can work closely with users and build software that solves real business problems.
+          I'm interested in opportunities in Forward Deployed Engineering, Solutions Engineering, Sales Engineering, and software development. I enjoy technical problem solving, working with stakeholders, and building solutions that people actually use.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="resume.pdf" target="_blank">Open Resume</a>
-          
           <a class="btn secondary" href="https://www.linkedin.com/in/matt-thomas-7b9871342" target="_blank">LinkedIn</a>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <strong>May 2026</strong>
-            <span>Graduating from Montana State University</span>
-          </div>
-          <div class="stat">
-            <strong>Real internship build</strong>
-            <span>Business-facing scheduling workflow software</span>
-          </div>
-          <div class="stat">
-            <strong>Customer-facing mindset</strong>
-            <span>Translate user pain into usable technical solutions</span>
-          </div>
-          <div class="stat">
-            <strong>Strong fit for</strong>
-            <span>Solutions, presales, implementation, technical consulting</span>
-          </div>
+          <a class="btn secondary" href="https://github.com/mattyt098" target="_blank">GitHub</a>
         </div>
       </section>
-
-      <aside class="card">
-        <h2>What I bring</h2>
-        <ul class="mini-list">
-          <li>Computer Science graduate with hands-on software development experience</li>
-          <li>Built internal business applications using C#, JavaScript, SQL, and REST APIs</li>
-          <li>Worked directly with stakeholders to gather requirements and improve workflows</li>
-          <li>Experience taking projects from planning and development through testing</li>
-          <li>Strong communication skills with both technical and non-technical teams</li>
-        </ul>
-
-        <h3 style="margin-top:22px;">Core tools + technologies</h3>
-        <div class="pill-row">
-          <span class="pill">C#</span>
-          <span class="pill">.NET</span>
-          <span class="pill">ASP.NET MVC</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">SQL</span>
-          <span class="pill">REST APIs</span>
-          <span class="pill">Bootstrap</span>
-          <span class="pill">jQuery</span>
-          <span class="pill">Kendo UI</span>
-          <span class="pill">Azure DevOps</span>
-          <span class="pill">GitHub</span>
-          <span class="pill">Visual Studio</span>
-        </div>
-      </aside>
     </div>
   </header>
 
   <main>
-    <section class="section" id="about">
+
+    <section class="section">
       <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">About</div>
-          <h2>Why this type of work interests me</h2>
-        </div>
-        <div class="grid-2">
-          <div class="card">
-            <p>I’ve always enjoyed the technical side of software development, but what I find most rewarding is building something that people actually use. The best projects I’ve worked on were the ones where I could talk to users, understand their frustrations, and help make their work easier.</p>
-            <p>That’s why I’m interested in roles that combine problem solving, software development, and collaboration. I like understanding how a business operates, figuring out where technology can help, and then building solutions that make a difference.</p>
-          </div>
-          <div class="card">
-            <h3>What I would bring to the team</h3>
-            <ul class="checklist">
-              <li><strong>Real-world experience:</strong> Built software during my internship that supported scheduling and approval workflows for construction teams.</li>
-              <li><strong>User-focused mindset:</strong> I enjoy understanding how people work and building tools that make their jobs easier.</li>
-              <li><strong>Strong technical foundation:</strong> Experience with C#, .NET, JavaScript, SQL, APIs, and full-stack web development.</li>
-              <li><strong>Collaborative approach:</strong> Worked with stakeholders, gathered feedback, and adjusted features based on business needs.</li>
-              <li><strong>Ownership:</strong> Comfortable learning new technologies and taking responsibility for delivering results.</li>
-            </ul>
-          </div>
+        <div class="card">
+          <h2>About Me</h2>
+          <p>I recently graduated from Montana State University with a degree in Computer Science. During my internship at ECC, I worked on internal software used by project teams to manage scheduling workflows, activity updates, and approval processes.</p>
+          <p>What I enjoy most is understanding how people work, identifying inefficient processes, and building software that makes those processes easier. That interest is what draws me toward Forward Deployed Engineering, Solutions Engineering, and other technical customer-facing roles.</p>
         </div>
       </div>
     </section>
@@ -393,30 +338,24 @@
       <div class="container">
         <div class="section-header">
           <div class="eyebrow">Experience</div>
-          <h2>Real work I’ve already done</h2>
+          <h2>Professional Experience</h2>
         </div>
         <div class="timeline">
           <div class="timeline-item card">
             <strong>Web Developer Intern | ECC | Summer 2025</strong>
-            <p>
-              Built a Scheduling Change Request web application for construction teams so field managers could submit proposed schedule updates for review and approval.
-              The tool helped centralize project activity updates, improve communication, and make the scheduling process easier to track.
-            </p>
-            <p>
-              Worked with C#, ASP.NET MVC, JavaScript, jQuery, Bootstrap, Kendo UI, SQL, RESTful APIs, Dapper, and Azure DevOps.
-              Built modal workflows, grid interactions, form handling, schedule editing flows, and notification logic to support actual business use.
-            </p>
-            <p>
-              This gave me a strong foundation in understanding user workflows, building practical tools, and translating business needs into working solutions.
-            </p>
+            <p>Developed and enhanced an internal project scheduling platform used by project teams to manage schedules, activity updates, and approval workflows.</p>
+            <p>Built and refined user-facing features using C#, JavaScript, ASP.NET MVC, SQL, REST APIs, and Kendo UI to improve scheduling workflows and usability.</p>
+            <p>Worked directly with project managers, schedulers, and stakeholders to understand business challenges, gather requirements, communicate technical solutions, and deliver software improvements that supported day-to-day operations.</p>
           </div>
-
           <div class="timeline-item card">
-            <strong>Montana State University | B.S. Computer Science</strong>
-            <p>
-              Studying computer science with hands-on work across software development, web applications, databases, systems, and customer-facing project presentations.
-              I’ve also built and presented technical project proposals and worked through real development workflows with feedback from supervisors and teams.
-            </p>
+            <strong>Project Manager | Fireman's Philanthropy</strong>
+            <p>Coordinated event logistics, schedules, volunteers, and operational planning while working with multiple teams to execute successful fundraising events.</p>
+            <p>Managed competing priorities, adapted to changing requirements, and helped coordinate events that raised more than $22,000 for local charitable initiatives.</p>
+          </div>
+          <div class="timeline-item card">
+            <strong>Porter | Ron DuPratt Ford | May 2024 – July 2024</strong>
+            <p>Supported daily dealership operations by coordinating vehicle movement, assisting service advisors and technicians, and helping maintain an efficient workflow across departments.</p>
+            <p>Worked directly with customers and staff in a fast-paced environment, prioritizing communication, reliability, and attention to detail while ensuring a positive customer experience.</p>
           </div>
         </div>
       </div>
@@ -426,59 +365,62 @@
       <div class="container">
         <div class="section-header">
           <div class="eyebrow">Projects</div>
-          <h2>Projects that show how I think</h2>
+          <h2>Top Projects</h2>
         </div>
 
         <div class="grid-2">
           <article class="card project-card">
-            
             <div class="project-copy">
-              <h3>Scheduling Change Request Application</h3>
-              <p>
-                Built during my internship to support construction scheduling workflows. The goal was to help field teams submit schedule changes, route those updates for review, and keep the process organized.
-              </p>
-              <p><strong>Business problem:</strong> schedule changes were hard to manage and needed a better workflow for review and communication.</p>
-              <p><strong>My role:</strong> helped build the web application flow, modal interactions, data handling, and user-facing features that made the process easier to use.</p>
-              <p><strong>Tech used:</strong> C#, ASP.NET MVC, JavaScript, jQuery, Bootstrap, Kendo UI, SQL, REST APIs, Dapper.</p>
+              <h3>Internal Project Scheduling Website</h3>
+              <p>Contributed to a web-based scheduling platform designed to centralize schedule information and make updates more accessible to project teams.</p>
+              <p><strong>What I worked on:</strong> Built user-facing functionality, workflow improvements, modal interfaces, API integrations, and scheduling-related features used by project teams.</p>
+              <p><strong>Impact:</strong> Improved scheduling workflows by incorporating stakeholder feedback and refining the interface around real scheduling needs.</p>
+              <p><strong>Tech used:</strong> C#, ASP.NET MVC, JavaScript, SQL, REST APIs, Kendo UI, Bootstrap, Azure DevOps.</p>
             </div>
           </article>
 
           <article class="card project-card">
-            
             <div class="project-copy">
-              <h3>NFL Stats and Drafting Tool</h3>
-              <p>
-                Built a full-stack tool focused on player search, filtering, projected points, comparison mode, and fantasy roster flow.
-                This project showed my ability to build an engaging user-facing product and present data in a way that is useful and easy to understand.
-              </p>
-              <p><strong>What it shows:</strong> product thinking, UI design, data handling, and building features around what the user actually wants to do.</p>
-              <p><strong>Tech used:</strong> Node.js, Express, JavaScript, local storage, API integration, frontend UI workflows.</p>
+              <h3>Unemployed Tycoon Roblox Game</h3>
+              <p>Building a multiplayer Roblox simulation game featuring progression systems, persistent player data, in-game economies, and interactive business mechanics.</p>
+              <p><strong>What I worked on:</strong> Designing gameplay systems, player progression, data persistence, business logic, and long-term content expansion.</p>
+              <p><strong>What it demonstrates:</strong> End-to-end ownership of a software project including planning, implementation, testing, iteration, and feature development.</p>
+              <p><strong>Tech used:</strong> Roblox Studio, Lua, DataStore systems, multiplayer game architecture.</p>
+            </div>
+          </article>
+        </div>
+        <div class="grid-2" style="margin-top: 22px;">
+          <article class="card project-card">
+            <div class="project-copy">
+              <h3>NFL Statistics & Prediction Dashboard</h3>
+              <p>Developed a web-based analytics platform that aggregates NFL team and player data to provide performance metrics, trend analysis, and game predictions.</p>
+              <p><strong>What I worked on:</strong> Built data processing pipelines, statistical analysis features, and user-facing dashboards for exploring sports data.</p>
+              <p><strong>What it demonstrates:</strong> Data analysis, full-stack development, visualization, and presenting complex information in a useful way.</p>
+              <p><strong>Tech used:</strong> Python, SQL, JavaScript, APIs, statistical modeling.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    
-
-    <section class="section">
+    <section class="section" id="roles">
       <div class="container">
         <div class="section-header">
-          <div class="eyebrow">Target roles</div>
-          <h2>Roles I’m actively pursuing</h2>
+          <div class="eyebrow">Career Interests</div>
+          <h2>Roles I'm Pursuing</h2>
         </div>
         <div class="grid-3">
           <div class="card">
+            <h3>Forward Deployed Engineering</h3>
+            <p>Roles that combine software development, problem solving, stakeholder interaction, and implementing solutions that improve business operations.</p>
+          </div>
+          <div class="card">
             <h3>Solutions Engineering</h3>
-            <p>Junior Solutions Engineer, Associate Solutions Engineer, Sales Engineer Associate, Presales roles.</p>
+            <p>Technical customer-facing roles focused on understanding business needs, demonstrating solutions, and helping organizations successfully adopt technology.</p>
           </div>
           <div class="card">
-            <h3>Solution Consulting</h3>
-            <p>Associate Solution Consultant, Technical Consultant, Platform Consultant, product-facing consulting roles.</p>
-          </div>
-          <div class="card">
-            <h3>Adjacent entry points</h3>
-            <p>Implementation Consultant, Technical Account roles, Customer Success Engineer, Product Specialist, Technical Support Engineer in SaaS.</p>
+            <h3>Sales Engineering</h3>
+            <p>Technical presales and sales engineering opportunities that combine communication, technical expertise, relationship building, and problem solving.</p>
           </div>
         </div>
       </div>
@@ -492,7 +434,7 @@
         </div>
         <div class="card">
           <p>
-            I'm currently looking for opportunities in software engineering, Forward Deployed Engineering, solutions engineering, and related technical roles. If you'd like to connect, I'd be happy to chat.
+            I'm actively pursuing opportunities in Forward Deployed Engineering, Solutions Engineering, Sales Engineering, and related technical customer-facing roles. If you'd like to connect, feel free to reach out.
           </p>
           <div class="contact-box">
             <a class="btn primary" href="mailto:matthew.thomas.cs@gmail.com">Email Me</a>
@@ -506,3 +448,15 @@
 
 </body>
 </html>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Education</div>
+          <h2>Education</h2>
+        </div>
+        <div class="card">
+          Montana State University | B.S. Computer Science | GPA: 3.37
+        </div>
+      </div>
+    </section>
